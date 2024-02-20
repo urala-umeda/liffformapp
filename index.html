@@ -25,11 +25,14 @@
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
 
-         liff.openWindow({
+        
+        setTimeout( ()=>{
+        // 1秒後の処理
+             liff.openWindow({
               url: "https://lin.ee/ASjIQ8S",
               external: true,
             });
-        time.sleep(3);
+    }, 3000);
         
  $(document).ready(function () {
             const liffId = "**********-********";
