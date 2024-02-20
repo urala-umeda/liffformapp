@@ -28,7 +28,7 @@
          
       
            $(document).ready(function () {
-            const liffId = "**********-********";
+            const liffId = "2003682642-kEa2rVX6";
             initializeLiff(liffId);
         })
    
@@ -67,11 +67,6 @@
                 const haikin  = $('input[name="haikin"]').val();
                 const sukuwat = $('input[name="sukuwat"]').val();
                 const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
-
-                 liff.openWindow({
-              url: "https://lin.ee/ASjIQ8S",
-              external: true,
-            });
                 
                 sendText(msg);
                 return false;
