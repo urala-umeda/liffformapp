@@ -26,18 +26,17 @@
     <script>
 
         $(document).ready(function () {
-           liffStart();
+            liff.openWindow({
+              url: "https://lin.ee/ASjIQ8S",
+              external: true,
+            });
             const liffId = "2003682642-kEa2rVX6";
             initializeLiff(liffId);
             
         })
-            function liffStart() {
-                 liff.openWindow({
-              url: "https://lin.ee/ASjIQ8S",
-              external: true,
-            });
-       
-        })
+        //     function liffStart() {
+            
+        // })
 
         function initializeLiff(liffId) {
             liff.init({
