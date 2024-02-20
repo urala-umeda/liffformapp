@@ -50,6 +50,10 @@
                 liffId: liffId
             }).then(() => {
                 initializeApp();
+                liff.openWindow({
+  url: "https://lin.ee/sQSMllAt",
+  external: true,
+});
             }).catch((err) => {
                 console.log('LIFF Initialization failed ', err);
             });
