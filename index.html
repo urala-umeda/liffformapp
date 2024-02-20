@@ -68,7 +68,8 @@
                 const sukuwat = $('input[name="sukuwat"]').val();
                 const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
                 
-                sendText(msg);
+                // sendText(msg);
+                sendReplyMessage(reply_token, msg);
                 return false;
             });
         });
@@ -87,7 +88,8 @@
     }),
   });
   return res;
-        
+
+            
     </script>
 
 </body>
