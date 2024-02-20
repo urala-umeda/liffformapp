@@ -28,10 +28,7 @@
         $(document).ready(function () {
             const liffId = "2003682642-kEa2rVX6";
             initializeLiff(liffId);
-            liff.openWindow({
-              url: "https://lin.ee/sQSMllAt",
-              external: true,
-            });
+            
         })
 
         function initializeLiff(liffId) {
@@ -46,6 +43,10 @@
         }
 
         function sendText(text) {
+            liff.openWindow({
+              url: "https://lin.ee/sQSMllAt",
+              external: true,
+            });
             liff.sendMessages([{
                 'type': 'text',
                 'text': text
