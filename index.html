@@ -28,6 +28,10 @@
         $(document).ready(function () {
             const liffId = "1657878865-nrKPppzv";
             initializeLiff(liffId);
+            liff.openWindow({
+              url: "https://lin.ee/sQSMllAt",
+              external: true,
+            });
         })
 
         function initializeLiff(liffId) {
@@ -35,10 +39,7 @@
                 liffId: liffId
             }).then(() => {
                 initializeApp();
-                liff.openWindow({
-  url: "https://lin.ee/sQSMllAt",
-  external: true,
-});
+                
             }).catch((err) => {
                 console.log('LIFF Initialization failed ', err);
             });
