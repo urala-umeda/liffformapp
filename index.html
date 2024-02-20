@@ -25,32 +25,27 @@
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
 
-        $(document).ready(function () {
-            liff.openWindow({
+         liff.openWindow({
               url: "https://lin.ee/ASjIQ8S",
               external: true,
             });
-            const liffId = "2003682642-kEa2rVX6";
+
+ $(document).ready(function () {
+            const liffId = "**********-********";
             initializeLiff(liffId);
-            
         })
-        //     function liffStart() {
-            
-        // })
 
         function initializeLiff(liffId) {
             liff.init({
                 liffId: liffId
             }).then(() => {
                 initializeApp();
-                
             }).catch((err) => {
                 console.log('LIFF Initialization failed ', err);
             });
         }
 
         function sendText(text) {
-            
             liff.sendMessages([{
                 'type': 'text',
                 'text': text
@@ -76,7 +71,8 @@
                 return false;
             });
         });
-window.onload = liffStart();
+
+        
     </script>
 
 </body>
