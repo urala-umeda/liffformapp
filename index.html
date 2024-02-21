@@ -131,8 +131,8 @@
       const idToken = liff.getDecodedIDToken();
       const userId = idToken.sub;
       $('.for-sp').append(`<input type="hidden" name="userId" value="${userId}">`);
-      $('ul').append('<li><input type="submit" class="btn-left" value="左に投票"></li>');
-      $('ul').append('<li><input type="submit" class="btn-right" value="右に投票"></li>');
+      $('ul').append('<li><input type="submit" class="btn-left" name="LEFT" value="左に投票"></li>');
+      $('ul').append('<li><input type="submit" class="btn-right" name="RIGHT" value="右に投票"></li>');
 
     })
 
