@@ -80,10 +80,10 @@
         src="https://urala-umeda.github.io/liffformapp/8fd9bc7d6f869c603f6cfca445d362a07d4a84ca-thumb-autox372-1834.jpg"
         alt="">
         <div id="sp-fixed-menu" class="for-sp">
-          <ul>
+          <!-- <ul>
             <li><a href="#">お問い合わせ</a></li>
             <li><a href="#">資料請求</a></li>
-          </ul>
+          </ul> -->
         </div>
   </div>
 
@@ -108,9 +108,9 @@
       }
       const idToken = liff.getDecodedIDToken();
       const userId = idToken.sub;
-      $('.btn-area').append(`<input type="hidden" name="userId" value="${userId}">`);
-      $('.btn-area').append('<input type="submit" class="w-40 mt-5 btn btn-primary" value="左に投票">');
-      $('.btn-area').append('<input type="submit" class="w-40 mt-5 btn btn-danger" value="右に投票">');
+      $('.for-sp').append(`<input type="hidden" name="userId" value="${userId}">`);
+      $('.for-sp').append('<input type="submit" class="w-40 mt-5 btn btn-primary" value="左に投票">');
+      $('.for-sp').append('<input type="submit" class="w-40 mt-5 btn btn-danger" value="右に投票">');
 
     })
 
