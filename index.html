@@ -165,7 +165,9 @@
     let btn1name = document.getElementsByName("voteLeft").value;
     $('form').submit(function( event ) {
       event.preventDefault();
-      $.post( 'https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', $('form').serialize() );
+      var data = $('form').serializeArray();
+      data.push({name: 'userName', value: 'this is username'});
+      $.post( 'https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
     });
 
   </script>
