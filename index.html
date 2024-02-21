@@ -125,7 +125,7 @@
       alt="">
 
     <form id="sp-fixed-menu" class="for-sp">
-      <input type="hidden" name="userId" value="ID00000">
+<!--       <input type="hidden" name="userId" value="ID00000"> -->
       <ul>
         <!-- <li><a href="#">お問い合わせ</a></li>
             <li><a href="#">資料請求</a></li> -->
@@ -168,13 +168,6 @@
 
 
     $('form').submit(function (event) {
-      // フォームが送信されたときに実行される処理
-      var buttonText = $(this).find('input[type=submit]:focus').val();
-      console.log(buttonText + ' ボタンが押されました');
-    });
-
-
-    $('form').submit(function (event) {
       event.preventDefault();
 
       var buttonText = $(this).find('input[type=submit]:focus').val();
@@ -186,16 +179,6 @@
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
 
-    });
-
-    $('#submitBtn2').click(function (event) {
-      event.preventDefault();
-
-      alert("");
-      let data = $('form').serializeArray();
-      data.push({ name: 'name', value: 'クラブハウスサンド' });
-
-      $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
     });
 
   </script>
