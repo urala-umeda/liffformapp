@@ -162,10 +162,7 @@
 
     })
 
-    document.getElementById('btn-left').addEventListener('click', function(){
-      alert('id名「' + this.id + '」のボタンを押しました。');
-    });
-    
+   
     $('form').submit(function (event) {
       event.preventDefault();
 
@@ -179,6 +176,12 @@
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', $('form').serialize());
     });
+
+     document.getElementById('btn-left').addEventListener('click', function(){
+      alert('id名「' + this.id + '」のボタンを押しました。');
+    });
+
+    
   </script>
 </body>
 
