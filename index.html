@@ -33,8 +33,7 @@
   <div class="container">
     <img src="https://urala-umeda.github.io/liffformapp/8fd9bc7d6f869c603f6cfca445d362a07d4a84ca-thumb-autox372-1834.jpg" alt="">
     <form class="w-75 mx-auto">
-      <input type="submit" class="w-40 mt-5 btn btn-primary" value="左に投票">
-      <input type="submit" class="w-40 mt-5 btn btn-danger" value="右に投票">
+     
     </form>
   </div>
 
@@ -60,8 +59,9 @@
       const idToken = liff.getDecodedIDToken();
       const userId = idToken.sub;
       $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
+      $('form').append('<input type="submit" class="w-40 mt-5 btn btn-primary" value="左に投票">');
+      $('form').append('<input type="submit" class="w-40 mt-5 btn btn-danger" value="右に投票">');
       
-      $('form').append('<input type="submit" class="mt-5 btn btn-danger" value="ぼたん">');
     })
 
     $('form').submit(function( event ) {
