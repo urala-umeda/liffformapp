@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LIFF 投票</title>
- 
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
   <style>
     * {
@@ -124,12 +124,12 @@
       src="https://urala-umeda.github.io/liffformapp/8fd9bc7d6f869c603f6cfca445d362a07d4a84ca-thumb-autox372-1834.jpg"
       alt="">
 
-      <form id="sp-fixed-menu" class="for-sp">
-        <ul>
-          <!-- <li><a href="#">お問い合わせ</a></li>
+    <form id="sp-fixed-menu" class="for-sp">
+      <ul>
+        <!-- <li><a href="#">お問い合わせ</a></li>
             <li><a href="#">資料請求</a></li> -->
-        </ul>
-      </form>
+      </ul>
+    </form>
 
   </div>
 
@@ -157,30 +157,28 @@
       $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
       $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
       $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
-      $('ul').append('<li><input type="submit" id="btn-left" class="btn-left" name="voteLeft" value="左に投票"></li>');
-      $('ul').append('<li><input type="submit"  id="btn-right" class="btn-right" name="voteRight" value="右に投票"></li>');
+      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
+      $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
     })
 
-   
-    $('form').submit(function (event) {
+    document.getElementById("submitBtn1").addEventListener("click", function () {
+      // ボタン1がクリックされたときの処理
+      var btn = $(this).val();
+      $('form').submit(function (event) {
       event.preventDefault();
 
-      if (event.target.value === '左に投票') {
-        alert("ボタン１が押された");
-      } else if (event.target.value === '右に投票') {
-        alert("ボタン２が押された");
-      }
       alert($('li').serialize());
 
 
-      $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', $('form').serialize());
+      $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', $('form').serialize() & btn);
+    });
     });
 
-     document.getElementById('btn-left').addEventListener('click', function(){
-      alert('id名「' + this.id + '」のボタンを押しました。');
+    document.getElementById("submitBtn2").addEventListener("click", function () {
+      // ボタン2がクリックされたときの処理
+      // ここに処理を記述
     });
-
     
   </script>
 </body>
