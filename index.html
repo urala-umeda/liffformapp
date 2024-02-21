@@ -137,6 +137,9 @@
     })
 
     $('form').submit(function (event) {
+      if(event.name === LEFT){
+        alert("左ボタン");
+      }
       event.preventDefault();
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', $('form').serialize());
     });
