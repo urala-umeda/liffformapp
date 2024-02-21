@@ -162,6 +162,14 @@
 
     })
 
+    function func_A(event){
+      if (event.target.value === '左に投票') {
+        alert("ボタン１が押された");
+      } else if (event.target.value === '右に投票') {
+        alert("ボタン２が押された");
+      }
+    }
+    
     $('form').submit(function (event) {
       event.preventDefault();
 
