@@ -125,12 +125,12 @@
       alt="">
 
     <form id="sp-fixed-menu" class="for-sp">
-      <ul>
+      
+    </form>
+<ul>
         <!-- <li><a href="#">お問い合わせ</a></li>
             <li><a href="#">資料請求</a></li> -->
       </ul>
-    </form>
-
   </div>
 
 
@@ -157,10 +157,17 @@
       $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
       $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
       $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
-      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
+
+      $('form').append(`<input type="hidden" name="onBtn" id="onBtn">`);
+      
+      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票" onClick="setSbmt('aaa')"></li>');
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
     })
+
+    function setSbmt(sVal){
+     document.getMyForm.onbtn.value = sVal;
+    }
     
     let btn1name = document.getElementsByName("voteLeft").value;
     $('#submitBtn1').submit(function( event ) {
