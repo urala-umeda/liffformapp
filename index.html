@@ -163,23 +163,9 @@
     })
     
     let btn1name = document.getElementsByName("voteLeft").value;
-    document.getElementById("submitBtn1").addEventListener("click", function () {
-      // ボタン1がクリックされたときの処理
-      var btn = $(this).val();
-    });
-
-    document.getElementById("submitBtn2").addEventListener("click", function () {
-      // ボタン2がクリックされたときの処理
-      // ここに処理を記述
-    });
-    
-      $('#submitBtn1').click(function (event) {
+    $('form').submit(function( event ) {
       event.preventDefault();
-      
-      alert($('li').serialize());
-
-
-      $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec',$('form').serialize())
+      $.post( 'https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', $('form').serialize() );
     });
 
   </script>
