@@ -123,14 +123,14 @@
     <img
       src="https://urala-umeda.github.io/liffformapp/8fd9bc7d6f869c603f6cfca445d362a07d4a84ca-thumb-autox372-1834.jpg"
       alt="">
-    <div id="sp-fixed-menu" class="for-sp">
-      <form>
+    <form>
+      <form id="sp-fixed-menu" class="for-sp">
+
         <ul>
           <!-- <li><a href="#">お問い合わせ</a></li>
             <li><a href="#">資料請求</a></li> -->
         </ul>
       </form>
-    </div>
   </div>
 
 
@@ -166,9 +166,9 @@
 
     $('form').submit(function (event) {
       event.preventDefault();
-      if (event.name === LEFT) {
-        alert("左ボタン");
-      }
+
+      alert("左ボタン");
+
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', $('.for-sp').serialize());
     });
