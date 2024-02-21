@@ -167,18 +167,25 @@
     // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
 
+    $('form').submit(function (event) {
+      // フォームが送信されたときに実行される処理
+      var buttonText = $(this).find('input[type=submit]:focus').val();
+      console.log(buttonText + ' ボタンが押されました');
+    });
 
-    $('#submitBtn1').click(function (event) {
-      $('form').submit(function (event){
-        event.preventDefault();
 
-        alert("投票してもよいですか？");
-        let data = $('form').serializeArray();
-        data.push({ name: 'name', value: 'ケイジャンチキン' });
+    $('form').submit(function (event) {
+      event.preventDefault();
 
-        $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
+      var buttonText = $(this).find('input[type=submit]:focus').val();
+      console.log(buttonText + ' ボタンが押されました');
 
-      })
+      alert("投票してもよいですか？");
+      let data = $('form').serializeArray();
+      data.push({ name: 'name', value: 'ケイジャンチキン' });
+
+      $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
+
     });
 
     $('#submitBtn2').click(function (event) {
