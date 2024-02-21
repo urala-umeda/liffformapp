@@ -162,20 +162,21 @@
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
     });
 
-
-    // $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
-    // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
-
-
     $('form').submit(function (event) {
       event.preventDefault();
 
       var buttonText = $(this).find('input[type=submit]:focus').val();
       console.log(buttonText + ' ボタンが押されました');
+      if(buttonText == "左に投票"){
+        buttonText = "ケイジャンチキン"
+      }else {
+        buttonText = "クラブハウスサンド"
+      }
 
-      alert("投票しますか？");
+
+      alert(buttonText + "に投票しますか？");
       let data = $('form').serializeArray();
-      data.push({ name: 'vote', value: buttonText });
+      data.push({ name: 'menu', value: buttonText });
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
 
