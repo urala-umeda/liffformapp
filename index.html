@@ -125,12 +125,13 @@
       alt="">
 
     <form id="sp-fixed-menu" class="for-sp">
-      
-    </form>
-<ul>
+      <input type="hidden" name="userId" value="ID00000">
+      <ul>
         <!-- <li><a href="#">お問い合わせ</a></li>
             <li><a href="#">資料請求</a></li> -->
       </ul>
+    </form>
+
   </div>
 
 
@@ -157,20 +158,37 @@
       $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
       $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
       $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
-
-      $('form').append(`<input type="hidden" name="onBtn" id="onBtn">`);
-      
-      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票" ></li>');
+      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
+    });
 
-    })
-    
-    let btn1name = document.getElementsByName("voteLeft").value;
-    $('#submitBtn1').submit(function( event ) {
+
+    // $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
+    // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
+
+
+
+    $('#submitBtn1').click(function () {
+      $('form').submit(function (event){
+        event.preventDefault();
+
+        alert("投票してもよいですか？");
+        let data = $('form').serializeArray();
+        data.push({ name: 'name', value: 'ケイジャンチキン' });
+
+        $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
+
+      })
+    });
+
+    $('#submitBtn2').click(function (event) {
       event.preventDefault();
-      var data = $('form').serializeArray();
-      data.push({name: 'userName', value: 'this is username'});
-      $.post( 'https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
+
+      alert("");
+      let data = $('form').serializeArray();
+      data.push({ name: 'name', value: 'クラブハウスサンド' });
+
+      $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
     });
 
   </script>
