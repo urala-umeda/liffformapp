@@ -161,18 +161,18 @@
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
     })
-
-    document.getElementById("submitBtn1").addEventListener("click", function () {
-      // ボタン1がクリックされたときの処理
-      var btn = $(this).val();
-      $('form').submit(function (event) {
+    
+      $('#submitBtn1').submit(function (event) {
       event.preventDefault();
-
+      var btn = $(this).val();
       alert($('li').serialize());
 
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', $('form').serialize() & btn);
     });
+    document.getElementById("submitBtn1").addEventListener("click", function () {
+      // ボタン1がクリックされたときの処理
+      
     });
 
     document.getElementById("submitBtn2").addEventListener("click", function () {
