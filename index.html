@@ -175,7 +175,7 @@
 
       alert("投票しますか？");
       let data = $('form').serializeArray();
-      data.push({ name: 'name', value: buttonText });
+      data.push({ name: 'vote', value: buttonText });
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
 
