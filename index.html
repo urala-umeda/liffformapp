@@ -162,6 +162,8 @@
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
     });
 
+    const shop = "ウララ";
+
     $('form').submit(function (event) {
       event.preventDefault();
 
@@ -177,9 +179,11 @@
       alert(buttonText + "に投票しますか？");
       let data = $('form').serializeArray();
       data.push({ name: 'menu', value: buttonText });
+      data.push({ name: 'shop', value: shop });
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
 
+      alert("投票しました！");
     });
 
   </script>
