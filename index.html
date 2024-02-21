@@ -152,8 +152,8 @@
       }
       const idToken = liff.getDecodedIDToken();
       const userId = idToken.sub;
-      const userName = string(idToken.name);
-      const userPic = string(idToken.picture);
+      const userName = idToken.name;
+      const userPic = idToken.picture;
       $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
       $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
       $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
