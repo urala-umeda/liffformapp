@@ -156,9 +156,9 @@
       const userId = idToken.sub;
       const userName = idToken.name;
       const userPic = idToken.picture;
-      $('.for-sp').append(`<input type="hidden" name="userId" value="${userId}">`);
-      $('.for-sp').append(`<input type="hidden" name="userName" value="${userName}">`);
-      $('.for-sp').append(`<input type="hidden" name="userPic" value="${userPic}">`);
+      $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
+      $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
+      $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
       $('ul').append('<li><input type="submit" class="btn-left" name="LEFT" value="左に投票"></li>');
       $('ul').append('<li><input type="submit" class="btn-right" name="RIGHT" value="右に投票"></li>');
 
@@ -167,7 +167,7 @@
     $('form').submit(function (event) {
       event.preventDefault();
 
-      alert("左ボタン");
+      alert("ボタン");
 
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', $('form').serialize());
