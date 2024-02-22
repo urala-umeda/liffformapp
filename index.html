@@ -162,12 +162,20 @@
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
     });
 
-    
-    $('form').submit(function (event) {
-      // event.preventDefault();
+   
+    let buttonText = "";
+    function hoge(e){
+      console.log(e.target.value)
+      buttonText = e.target.value;
+    }
 
-      var buttonText = $(this).find('input[type=submit]:focus').val();
-      console.log(buttonText + ' ボタンが押されました');
+    document.getElementById("submitBtn1").addEventListener('click', hoge, false)
+
+    $('form').submit(function (event) {
+      event.preventDefault();
+
+      // var buttonText = $(this).find('input[type=submit]:focus').val();
+      // console.log(buttonText + ' ボタンが押されました');
       if(buttonText == "左に投票"){
         buttonText = "ケイジャンチキン"
       }else {
@@ -186,7 +194,7 @@
 
       alert("投票しました！");
 
-      // liff.closeWindow();
+      liff.closeWindow();
     });
 
   </script>
