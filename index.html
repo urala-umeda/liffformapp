@@ -183,16 +183,18 @@ $('form').submit(function (event) {
       }
 
       const shop = "ウララ";
-
-
-      alert(buttonText + "に投票しますか？");
+  
       let data = $('form').serializeArray();
       data.push({ name: 'menu', value: buttonText });
       data.push({ name: 'shop', value: shop });
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
 
-      alert("投票しました！");
+      Swal.fire({
+        title: "投票完了！",
+        text: buttonText + "に投票しました。",
+        icon: "success"
+      });
 
       liff.closeWindow();
     });
