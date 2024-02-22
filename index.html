@@ -144,28 +144,28 @@
   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 
   <script>
-    // liff.init({
-    //   liffId: '2003690789-4xoj9DNp'
-    // }).catch((err) => {
-    //   console.log(err);
-    // });
+    liff.init({
+      liffId: '2003690789-4xoj9DNp'
+    }).catch((err) => {
+      console.log(err);
+    });
 
-    // liff.ready.then(() => {
-    //   if (!liff.isLoggedIn()) {
-    //     liff.login();
-    //   }
-    //   const idToken = liff.getDecodedIDToken();
-    //   const userId = idToken.sub;
-    //   const userName = idToken.name;
-    //   const userPic = idToken.picture;
-    //   $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
-    //   $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
-    //   $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
-    //   $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
-    //   $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
-    // });
-    $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
-    $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
+    liff.ready.then(() => {
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      }
+      const idToken = liff.getDecodedIDToken();
+      const userId = idToken.sub;
+      const userName = idToken.name;
+      const userPic = idToken.picture;
+      $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
+      $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
+      $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
+      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
+      $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
+    });
+    // $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
+    // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
 
     $('form').submit(function (event) {
