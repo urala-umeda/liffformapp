@@ -177,7 +177,7 @@
 
       var buttonText = $(this).find('input[type=submit]:focus').val();
       console.log(buttonText + ' ボタンが押されました');
-      if (buttonText == "左に投票") {
+      if (buttonText === "左に投票") {
         buttonText = "ケイジャンチキン"
       } else {
         buttonText = "クラブハウスサンド"
