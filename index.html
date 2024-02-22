@@ -174,10 +174,13 @@
 
     $('form').submit(function (event) {
       event.preventDefault();
+      const elem = document.activeElement;
+      elem.blur();
+
       let buttonText ="";
       buttonText = $(this).find('input[type=submit]:focus').val();
       console.log(buttonText + ' ボタンが押されました');
-      if (buttonText === "左に投票") {
+      if (buttonText == "左に投票") {
         buttonText = "ケイジャンチキン"
       } else {
         buttonText = "クラブハウスサンド"
@@ -199,8 +202,7 @@
         text: buttonText + "に投票しました。",
         icon: "success"
       });
-      const elem = document.activeElement;
-      elem.blur();
+      
       // liff.closeWindow();
     });
 
