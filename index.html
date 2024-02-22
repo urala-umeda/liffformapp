@@ -125,7 +125,7 @@
       alt="">
 
     <form id="sp-fixed-menu" class="for-sp">
-<!--       <input type="hidden" name="userId" value="ID00000"> -->
+      <!--       <input type="hidden" name="userId" value="ID00000"> -->
       <ul>
         <!-- <li><a href="#">お問い合わせ</a></li>
             <li><a href="#">資料請求</a></li> -->
@@ -139,38 +139,43 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+
   <script>
-    liff.init({
-      liffId: '2003690789-4xoj9DNp'
-    }).catch((err) => {
-      console.log(err);
-    });
+    // liff.init({
+    //   liffId: '2003690789-4xoj9DNp'
+    // }).catch((err) => {
+    //   console.log(err);
+    // });
 
-    liff.ready.then(() => {
-      if (!liff.isLoggedIn()) {
-        liff.login();
-      }
-      const idToken = liff.getDecodedIDToken();
-      const userId = idToken.sub;
-      const userName = idToken.name;
-      const userPic = idToken.picture;
-      $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
-      $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
-      $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
-      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
-      $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
-    });
+    // liff.ready.then(() => {
+    //   if (!liff.isLoggedIn()) {
+    //     liff.login();
+    //   }
+    //   const idToken = liff.getDecodedIDToken();
+    //   const userId = idToken.sub;
+    //   const userName = idToken.name;
+    //   const userPic = idToken.picture;
+    //   $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
+    //   $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
+    //   $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
+    //   $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
+    //   $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
+    // });
+    $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
+    $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
-    
+
     $('form').submit(function (event) {
       event.preventDefault();
 
       var buttonText = $(this).find('input[type=submit]:focus').val();
       console.log(buttonText + ' ボタンが押されました');
-      if(buttonText == "左に投票"){
+      if (buttonText == "左に投票") {
         buttonText = "ケイジャンチキン"
-      }else {
+      } else {
         buttonText = "クラブハウスサンド"
       }
 
@@ -184,10 +189,18 @@
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
 
-      alert("投票しました！");
-
-       liff.closeWindow();
+      // alert("投票しました！");
+      Swal.fire({
+        title: "The Internet?",
+        text: "That thing is still around?",
+        icon: "success"
+      });
+      // liff.closeWindow();
     });
+
+    function sw() {
+      Swal.fire("SweetAlert2 is working!");
+    }
 
   </script>
 </body>
