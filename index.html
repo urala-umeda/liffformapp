@@ -162,9 +162,12 @@
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
     });
 
-    let buttonText = "左に投票";
+    let buttonText = "";
     $('subminBtn1').on('touchstart',function () {
-      buttonText = buttonText;
+      buttonText = "左に投票";
+    });
+    $('subminBtn1').on('touchstart',function () {
+      buttonText = "";
     });
     
     $('form').submit(function (event) {
