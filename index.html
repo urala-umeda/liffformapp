@@ -171,44 +171,31 @@
     // $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
     // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
-
-    $('form').submit(function (event) {
+$('form').submit(function (event) {
       event.preventDefault();
-      const elem = document.activeElement;
-      elem.blur();
 
-      let buttonText ="";
-      buttonText = $(this).find('input[type=submit]:focus').val();
+      var buttonText = $(this).find('input[type=submit]:focus').val();
       console.log(buttonText + ' ボタンが押されました');
-      if (buttonText == "左に投票") {
+      if(buttonText == "左に投票"){
         buttonText = "ケイジャンチキン"
-      } else {
+      }else {
         buttonText = "クラブハウスサンド"
       }
 
       const shop = "ウララ";
 
 
-      // alert(buttonText + "に投票しますか？");
+      alert(buttonText + "に投票しますか？");
       let data = $('form').serializeArray();
       data.push({ name: 'menu', value: buttonText });
       data.push({ name: 'shop', value: shop });
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
 
-      // alert("投票しました！");
-      Swal.fire({
-        title: "投票完了！",
-        text: buttonText + "に投票しました。",
-        icon: "success"
-      });
-      
-      // liff.closeWindow();
-    });
+      alert("投票しました！");
 
-    function sw() {
-      Swal.fire("SweetAlert2 is working!");
-    }
+      liff.closeWindow();
+    });
 
   </script>
 </body>
