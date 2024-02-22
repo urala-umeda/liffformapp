@@ -162,20 +162,16 @@
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
     });
 
-   
-    let buttonText = "";
-    function hoge(e){
-      console.log(e.target.value)
-      buttonText = e.target.value;
-    }
-
-    document.getElementById("submitBtn1").addEventListener('click', hoge, false)
-
+    let buttonText = "左に投票";
+    $('subminBtn1').on('touchstart',function () {
+      buttonText = buttonText;
+    });
+    
     $('form').submit(function (event) {
       event.preventDefault();
 
       // var buttonText = $(this).find('input[type=submit]:focus').val();
-      // console.log(buttonText + ' ボタンが押されました');
+      console.log(buttonText + ' ボタンが押されました');
       if(buttonText == "左に投票"){
         buttonText = "ケイジャンチキン"
       }else {
