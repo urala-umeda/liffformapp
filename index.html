@@ -199,6 +199,8 @@
         text: buttonText + "に投票しました。",
         icon: "success"
       });
+      const elem = document.activeElement;
+      elem.blur();
       // liff.closeWindow();
     });
 
