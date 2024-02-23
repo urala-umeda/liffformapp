@@ -128,7 +128,7 @@
       src="https://urala-umeda.github.io/liffformapp/8fd9bc7d6f869c603f6cfca445d362a07d4a84ca-thumb-autox372-1834.jpg"
       alt="">
 
-    <form id="sp-fixed-menu" class="for-sp">
+    <form onsubmit="onSubmit(event)" id="sp-fixed-menu" class="for-sp">
       <!--       <input type="hidden" name="userId" value="ID00000"> -->
       <ul>
         <!-- <li><a href="#">お問い合わせ</a></li>
@@ -165,46 +165,73 @@
       $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
       $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
       $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
-      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
+      
+      $('ul').append('<li><input type="submit"  class="hide"></li>');
+      $('.hide').hide();
+      
+      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票" onclick='{changeFlag()}'></li>');
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
     });
     // $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
     // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
+<button class="hide" type="submit"></button>
+        <button class="button mr6" type="submit" onclick='{changeFlag()}'> buttonA</button>          
+        <button class="button" type="submit"> buttonB</button>
 
-    $('form').submit(function (event) {
-      event.preventDefault();
+    var isPostTemplate = false;
+      
+function onSubmit(e) {
+  e.preventDefault();
+  if (isPostTemplate) {
+    console.log('buttonA');
+    // フラグを戻す
+    isPostTemplate = false;
+    alert("false");
+  }
+  else {
+    console.log('buttonB');
+    alert("true");
+  }
+}
 
-      var buttonText = $(this).find('input[type=submit]:focus').val();
-      console.log(buttonText + ' ボタンが押されました');
-      if (buttonText == "左に投票") {
-        buttonText = "ケイジャンチキン"
-      } else {
-        buttonText = "クラブハウスサンド"
-      }
+function changeFlag() {
+  isPostTemplate = true;
+}
+    
+    // $('form').submit(function (event) {
+    //   event.preventDefault();
 
-      const shop = "ウララ";
+    //   var buttonText = $(this).find('input[type=submit]:focus').val();
+    //   console.log(buttonText + ' ボタンが押されました');
+    //   if (buttonText == "左に投票") {
+    //     buttonText = "ケイジャンチキン"
+    //   } else {
+    //     buttonText = "クラブハウスサンド"
+    //   }
+
+    //   const shop = "ウララ";
 
 
-      // alert(buttonText + "に投票しますか？");
-      let data = $('form').serializeArray();
-      data.push({ name: 'menu', value: buttonText });
-      data.push({ name: 'shop', value: shop });
+    //   // alert(buttonText + "に投票しますか？");
+    //   let data = $('form').serializeArray();
+    //   data.push({ name: 'menu', value: buttonText });
+    //   data.push({ name: 'shop', value: shop });
 
-      $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
+    //   $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
 
-      // alert("投票しました！");
-      Swal.fire({
-        title: "投票完了！",
-        text: buttonText + "に投票しました。",
-        icon: "success"
-      });
-      // liff.closeWindow();
-    });
+    //   // alert("投票しました！");
+    //   Swal.fire({
+    //     title: "投票完了！",
+    //     text: buttonText + "に投票しました。",
+    //     icon: "success"
+    //   });
+    //   // liff.closeWindow();
+    // });
 
-    function sw() {
-      Swal.fire("SweetAlert2 is working!");
-    }
+    // function sw() {
+    //   Swal.fire("SweetAlert2 is working!");
+    // }
 
   </script>
 </body>
