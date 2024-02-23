@@ -218,6 +218,8 @@ function changeFlag() {
 
       $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
 
+      isPostTemplate = false;
+      
       // alert("投票しました！");
       Swal.fire({
         title: "投票完了！",
