@@ -130,7 +130,7 @@
       src="https://urala-umeda.github.io/liffformapp/8fd9bc7d6f869c603f6cfca445d362a07d4a84ca-thumb-autox372-1834.jpg"
       alt="">
 
-    <form onsubmit="onSubmit(event)" id="sp-fixed-menu" class="for-sp">
+    <form id="sp-fixed-menu" class="for-sp">
       <!--       <input type="hidden" name="userId" value="ID00000"> -->
       <ul>
         <!-- <li><a href="#">お問い合わせ</a></li>
@@ -207,7 +207,7 @@ const send_id = "btn_id_ok";
 const cancel_id = "btn_id_cancel";
 
 
-    $('form').on('submit',function (event) {
+    $('form').submit(function (event) {
       event.preventDefault();
 
       // var buttonText = $(this).find('input[type=submit]:focus').val();
@@ -216,13 +216,13 @@ const cancel_id = "btn_id_cancel";
       // let buttonText = btn();
       const shop = "ウララ";
 
-      const click_id = e.nativeEvent.submitter.id;//⓵
+      const click_id = event.originalEvent.submitter.id;//⓵
     if (click_id === send_id) {
       console.log('ok');
-      alert("ok")
+      console.log("ok")
     } else if (click_id === cancel_id) {
       console.log('cancel');
-      alert("cancel")
+      console.log("cancel")
     }
 
 
