@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LIFF 投票</title>
-
+  <title>ウララ企画タイトル 投票店名</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
   <style>
     * {
@@ -13,17 +11,15 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       background-color:#e3f6f5;
     }
     .hide {
         display: none !important;
-      }
+    }
     .container {
       padding: 0;
     }
-
     /*メニューをページ下部に固定*/
     #sp-fixed-menu {
       position: fixed;
@@ -33,7 +29,6 @@
       opacity: 0.9;
       z-index: 99;
     }
-
     /*メニューを横並びにする*/
     #sp-fixed-menu ul {
       display: flex;
@@ -44,7 +39,6 @@
 
       text-align: center;
     }
-
     #sp-fixed-menu li {
       justify-content: center;
       align-items: center;
@@ -55,7 +49,6 @@
       font-size: 14px;
       /* border-right: 1px solid #fff; */
     }
-
     .btn-left {
       display: inline-block;
       border-radius: 5%;
@@ -115,31 +108,23 @@
       width: 100%;
       padding: 20px;
     }
-
     img {
       width: 100vw;
     }
+
   </style>
-
 </head>
-
 <body>
   <div class="container">
     <!-- 背景画像 -->
     <img
       src="https://urala-umeda.github.io/liffformapp/8fd9bc7d6f869c603f6cfca445d362a07d4a84ca-thumb-autox372-1834.jpg"
       alt="">
-
     <form id="sp-fixed-menu" class="for-sp">
-      <!--       <input type="hidden" name="userId" value="ID00000"> -->
       <ul>
-        <!-- <li><a href="#">お問い合わせ</a></li>
-            <li><a href="#">資料請求</a></li> -->
       </ul>
     </form>
-
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -147,9 +132,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 
   <script>
+    // 設定
+    const shop = "ウララ";
+
     liff.init({
       liffId: '2003690789-4xoj9DNp'
     }).catch((err) => {
@@ -170,64 +158,31 @@
       
       $('ul').append('<input type="submit"  class="hide">');
      
-      
       $('ul').append('<li><input type="submit" id="btn_id_ok" class="btn-left" name="voteLeft" value="左に投票" onclick="{changeFlag()}"></li>');
       $('ul').append('<li><input type="submit" id="btn_id_cancel" class="btn-right" name="voteRight" value="右に投票"></li>');
     });
     // $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
     // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
-// <button class="hide" type="submit"></button>
-//         <button class="button mr6" type="submit" onclick='{changeFlag()}'> buttonA</button>          
-//         <button class="button" type="submit"> buttonB</button>
-
-    // var isPostTemplate = false;
-      
-// function onSubmit(e) {
-//   e.preventDefault();
-//   if (isPostTemplate) {
-//     console.log('buttonA');
-//     // フラグを戻す
-//     isPostTemplate = false;
-//     alert("false");
-//   }
-//   else {
-//     console.log('buttonB');
-//     alert("true");
-//   }
-// }
-
-// function changeFlag() {
-//   isPostTemplate = true;
-// }
-//     function changesubmit(){
-
-//     };
-const send_id = "btn_id_ok";
-const cancel_id = "btn_id_cancel";
-
+    // ボタン設定
+    const send_id = "btn_id_ok";
+    const cancel_id = "btn_id_cancel";
 
     $('form').submit(function (event) {
       event.preventDefault();
 
-      // var buttonText = $(this).find('input[type=submit]:focus').val();
-      // console.log(buttonText + ' ボタンが押されました');
-     
-      // let buttonText = btn();
-      const shop = "ウララ";
-
+      // イベントオブジェクトからクリックされたボタンのidを取得
       const click_id = event.originalEvent.submitter.id;//⓵
-      let buttonText = "";
-    if (click_id === send_id) {
-      console.log('ok');
-      buttonText = "ケイジャンチキン" 
-    } else if (click_id === cancel_id) {
-      console.log('cancel');
-      buttonText = "クラブハウスサンド"
-    }
+      let buttonText = btn(click_id);
 
-
-      alert(buttonText + "に投票しますか？");
+      if (click_id === send_id) {
+        console.log('ok');
+        buttonText = "ケイジャンチキン" 
+      } else if (click_id === cancel_id) {
+        console.log('cancel');
+        buttonText = "クラブハウスサンド"
+      }
+      // alert(buttonText + "に投票しますか？");
       let data = $('form').serializeArray();
       data.push({ name: 'menu', value: buttonText });
       data.push({ name: 'shop', value: shop });
@@ -242,19 +197,6 @@ const cancel_id = "btn_id_cancel";
       });
       // liff.closeWindow();
     });
-
-    function btn(){
-      let buttonText = "";
-      if (isPostTemplate) {
-        buttonText = "ケイジャンチキン"
-      } else {
-        buttonText = "クラブハウスサンド"
-      }
-      return buttonText;
-    }
-    // function sw() {
-    //   Swal.fire("SweetAlert2 is working!");
-    // }
 
   </script>
 </body>
