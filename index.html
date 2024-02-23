@@ -174,9 +174,9 @@
     // $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
     // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
-const send_id = "btn_id_ok";
-const cancel_id = "btn_id_cancel";
-
+    const send_id = "btn_id_ok";
+    const cancel_id = "btn_id_cancel";
+    
 
     $('form').submit(function (event) {
       event.preventDefault();
@@ -185,16 +185,16 @@ const cancel_id = "btn_id_cancel";
 
       const click_id = event.originalEvent.submitter.id;//⓵
       let buttonText = "";
-    if (click_id === send_id) {
-      console.log('ok');
-      buttonText = "ケイジャンチキン" 
-    } else if (click_id === cancel_id) {
-      console.log('cancel');
-      buttonText = "クラブハウスサンド"
-    }
+      
+      if (click_id === send_id) {
+        console.log('ok');
+        buttonText = "ケイジャンチキン" 
+      } else if (click_id === cancel_id) {
+        console.log('cancel');
+        buttonText = "クラブハウスサンド"
+      }
 
-
-      alert(buttonText + "に投票しますか？");
+      // alert(buttonText + "に投票しますか？");
       let data = $('form').serializeArray();
       data.push({ name: 'menu', value: buttonText });
       data.push({ name: 'shop', value: shop });
@@ -209,16 +209,6 @@ const cancel_id = "btn_id_cancel";
       });
       // liff.closeWindow();
     });
-
-    function btn(){
-      let buttonText = "";
-      if (isPostTemplate) {
-        buttonText = "ケイジャンチキン"
-      } else {
-        buttonText = "クラブハウスサンド"
-      }
-      return buttonText;
-    }
 
   </script>
 </body>
