@@ -171,8 +171,8 @@
       $('ul').append('<input type="submit"  class="hide">');
      
       
-      $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票" onclick="{changeFlag()}"></li>');
-      $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
+      $('ul').append('<li><input type="submit" id="btn_id_ok" class="btn-left" name="voteLeft" value="左に投票" onclick="{changeFlag()}"></li>');
+      $('ul').append('<li><input type="submit" id="btn_id_cancel" class="btn-right" name="voteRight" value="右に投票"></li>');
     });
     // $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
     // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
@@ -181,18 +181,52 @@
 //         <button class="button mr6" type="submit" onclick='{changeFlag()}'> buttonA</button>          
 //         <button class="button" type="submit"> buttonB</button>
 
-    var isPostTemplate = false;
+    // var isPostTemplate = false;
       
-function onSubmit(e) {
-  e.preventDefault();
+// function onSubmit(e) {
+//   e.preventDefault();
+//   if (isPostTemplate) {
+//     console.log('buttonA');
+//     // フラグを戻す
+//     isPostTemplate = false;
+//     alert("false");
+//   }
+//   else {
+//     console.log('buttonB');
+//     alert("true");
+//   }
+// }
 
-  if (isPostTemplate) {
-    console.log('buttonA');
-    // フラグを戻す
-    isPostTemplate = false;
-    alert("false");
+// function changeFlag() {
+//   isPostTemplate = true;
+// }
+//     function changesubmit(){
 
-    alert(buttonText + "に投票しますか？");
+//     };
+const send_id = "btn_id_ok";
+const cancel_id = "btn_id_cancel";
+
+
+    $('form').on('submit',function (event) {
+      event.preventDefault();
+
+      // var buttonText = $(this).find('input[type=submit]:focus').val();
+      // console.log(buttonText + ' ボタンが押されました');
+     
+      // let buttonText = btn();
+      const shop = "ウララ";
+
+      const click_id = e.nativeEvent.submitter.id;//⓵
+    if (click_id === send_id) {
+      console.log('ok');
+      alert("ok")
+    } else if (click_id === cancel_id) {
+      console.log('cancel');
+      alert("cancel")
+    }
+
+
+      alert(buttonText + "に投票しますか？");
       let data = $('form').serializeArray();
       data.push({ name: 'menu', value: buttonText });
       data.push({ name: 'shop', value: shop });
@@ -205,53 +239,18 @@ function onSubmit(e) {
         text: buttonText + "に投票しました。",
         icon: "success"
       });
+      // liff.closeWindow();
+    });
 
-  }else {
-    console.log('buttonB');
-    alert("true");
-  }
-}
-
-function changeFlag() {
-  isPostTemplate = true;
-}
-   
-
-    // $('form').submit(function (event) {
-    //   event.preventDefault();
-
-    //   // var buttonText = $(this).find('input[type=submit]:focus').val();
-    //   // console.log(buttonText + ' ボタンが押されました');
-     
-    //   let buttonText = btn();
-    //   const shop = "ウララ";
-
-
-    //   alert(buttonText + "に投票しますか？");
-    //   let data = $('form').serializeArray();
-    //   data.push({ name: 'menu', value: buttonText });
-    //   data.push({ name: 'shop', value: shop });
-
-    //   $.post('https://script.google.com/macros/s/AKfycbybDXIRMjVeOkQ8x0DHwkpxykHFSJ8O-0_IVxICdLoowg9mxPrkvnpkim3Jqp1QNZSg/exec', data);
-
-    //   // alert("投票しました！");
-    //   Swal.fire({
-    //     title: "投票完了！",
-    //     text: buttonText + "に投票しました。",
-    //     icon: "success"
-    //   });
-    //   // liff.closeWindow();
-    // });
-
-    // function btn(){
-    //   let buttonText = "";
-    //   if (isPostTemplate) {
-    //     buttonText = "ケイジャンチキン"
-    //   } else {
-    //     buttonText = "クラブハウスサンド"
-    //   }
-    //   return buttonText;
-    // }
+    function btn(){
+      let buttonText = "";
+      if (isPostTemplate) {
+        buttonText = "ケイジャンチキン"
+      } else {
+        buttonText = "クラブハウスサンド"
+      }
+      return buttonText;
+    }
     // function sw() {
     //   Swal.fire("SweetAlert2 is working!");
     // }
