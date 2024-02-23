@@ -207,7 +207,7 @@ function changeFlag() {
       // var buttonText = $(this).find('input[type=submit]:focus').val();
       // console.log(buttonText + ' ボタンが押されました');
      
-      let buttonText = btn();
+      let buttonText = await btn();
       const shop = "ウララ";
 
 
@@ -229,7 +229,7 @@ function changeFlag() {
       // liff.closeWindow();
     });
 
-    function btn(){
+    async function btn(){
       let buttonText = "";
       if (isPostTemplate) {
         buttonText = "ケイジャンチキン"
