@@ -206,13 +206,8 @@ function changeFlag() {
 
       // var buttonText = $(this).find('input[type=submit]:focus').val();
       // console.log(buttonText + ' ボタンが押されました');
-      let buttonText = "";
-      if (isPostTemplate) {
-        buttonText = "ケイジャンチキン"
-      } else {
-        buttonText = "クラブハウスサンド"
-      }
-
+     
+      let buttonText = btn();
       const shop = "ウララ";
 
 
@@ -232,6 +227,15 @@ function changeFlag() {
       // liff.closeWindow();
     });
 
+    function btn(){
+      let buttonText = "";
+      if (isPostTemplate) {
+        buttonText = "ケイジャンチキン"
+      } else {
+        buttonText = "クラブハウスサンド"
+      }
+      return buttonText;
+    }
     // function sw() {
     //   Swal.fire("SweetAlert2 is working!");
     // }
