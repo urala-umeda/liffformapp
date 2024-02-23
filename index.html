@@ -217,12 +217,13 @@ const cancel_id = "btn_id_cancel";
       const shop = "ウララ";
 
       const click_id = event.originalEvent.submitter.id;//⓵
+      let buttonText = "";
     if (click_id === send_id) {
       console.log('ok');
-      console.log("ok")
+      buttonText = "ケイジャンチキン" 
     } else if (click_id === cancel_id) {
       console.log('cancel');
-      console.log("cancel")
+      buttonText = "クラブハウスサンド"
     }
 
 
