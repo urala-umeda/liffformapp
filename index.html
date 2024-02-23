@@ -131,10 +131,7 @@
       alt="">
 
     <form id="sp-fixed-menu" class="for-sp">
-      <!--       <input type="hidden" name="userId" value="ID00000"> -->
       <ul>
-        <!-- <li><a href="#">お問い合わせ</a></li>
-            <li><a href="#">資料請求</a></li> -->
       </ul>
     </form>
 
@@ -147,7 +144,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 
   <script>
     liff.init({
@@ -177,32 +174,6 @@
     // $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票"></li>');
     // $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
 
-// <button class="hide" type="submit"></button>
-//         <button class="button mr6" type="submit" onclick='{changeFlag()}'> buttonA</button>          
-//         <button class="button" type="submit"> buttonB</button>
-
-    // var isPostTemplate = false;
-      
-// function onSubmit(e) {
-//   e.preventDefault();
-//   if (isPostTemplate) {
-//     console.log('buttonA');
-//     // フラグを戻す
-//     isPostTemplate = false;
-//     alert("false");
-//   }
-//   else {
-//     console.log('buttonB');
-//     alert("true");
-//   }
-// }
-
-// function changeFlag() {
-//   isPostTemplate = true;
-// }
-//     function changesubmit(){
-
-//     };
 const send_id = "btn_id_ok";
 const cancel_id = "btn_id_cancel";
 
@@ -210,10 +181,6 @@ const cancel_id = "btn_id_cancel";
     $('form').submit(function (event) {
       event.preventDefault();
 
-      // var buttonText = $(this).find('input[type=submit]:focus').val();
-      // console.log(buttonText + ' ボタンが押されました');
-     
-      // let buttonText = btn();
       const shop = "ウララ";
 
       const click_id = event.originalEvent.submitter.id;//⓵
@@ -252,9 +219,6 @@ const cancel_id = "btn_id_cancel";
       }
       return buttonText;
     }
-    // function sw() {
-    //   Swal.fire("SweetAlert2 is working!");
-    // }
 
   </script>
 </body>
