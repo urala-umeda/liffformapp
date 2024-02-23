@@ -17,7 +17,9 @@
     body {
       background-color:#e3f6f5;
     }
-    
+    .hide {
+        display: none !important;
+      }
     .container {
       padding: 0;
     }
@@ -167,7 +169,7 @@
       $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
       
       $('ul').append('<input type="submit"  class="hide">');
-      $('.hide').hide();
+     
       
       $('ul').append('<li><input type="submit" id="submitBtn1" class="btn-left" name="voteLeft" value="左に投票" onclick="{changeFlag()}"></li>');
       $('ul').append('<li><input type="submit" id="submitBtn2" class="btn-right" name="voteRight" value="右に投票"></li>');
