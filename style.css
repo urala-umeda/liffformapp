@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: #e3f6f5;
+}
+
+.hide {
+  display: none !important;
+}
+
+img {
+  width: 100vw;
+}
+
+/*メニューをページ下部に固定*/
+#area-items {
+  position: fixed;
+  /* 配置の範囲 */
+  width: 100%;
+  height: 50%;
+  bottom: 0px;
+  margin-bottom: 20px;;
+  
+  display: flex;
+  align-items: flex-end;
+
+  opacity: 0.9;
+  z-index: 99;
+}
+.area-flex {
+  width: 100%;
+}
+/* ulを横並びにする　*/
+.btn-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  /* padding: 0;
+  margin: 0; */
+  width: 100%;
+  height: 100%;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100px;
+ 
+  font-size: 14px;
+  /* border-right: 1px solid #fff; */
+}
+
+
+/*ボタンを調整*/
+#area-items input  {
+  color: #fff;
+  text-align: center;
+  display: block;
+  width: 90%;
+  padding: 20px;
+}
+
+.btn-left {
+  display: block;
+  border-radius: 5%;
+  /* 角丸       */
+  font-size: 25pt;
+  /* 文字サイズ */
+  text-align: center;
+  /* 文字位置   */
+  cursor: pointer;
+  /* カーソル   */
+  padding: 12px 12px;
+  /* 余白       */
+  background: #38b435;
+  /* 背景色     */
+  color: #ffffff;
+  /* 文字色     */
+  line-height: 1em;
+  /* 1行の高さ  */
+  transition: .3s;
+  /* なめらか変化 */
+  /* box-shadow    : 6px 6px 3px #666666;  影の設定 */
+  border: 2px solid #38b435;
+  /* 枠の指定 */
+}
+
+/*左側メニューをオレンジ色に*/
+.btn-right {
+  display: inline-block;
+  border-radius: 5%;
+  /* 角丸       */
+  font-size: 25pt;
+  /* 文字サイズ */
+  text-align: center;
+  /* 文字位置   */
+  cursor: pointer;
+  /* カーソル   */
+  padding: 12px 12px;
+  /* 余白       */
+  background: #f3a324;
+  /* 背景色     */
+  color: #ffffff;
+  /* 文字色     */
+  line-height: 1em;
+  /* 1行の高さ  */
+  transition: .3s;
+  /* なめらか変化 */
+
+  border: 2px solid #f3a324;
+  /* 枠の指定 */
+}
+
+
+/* アニメーション */
+input.btn_animate04 {
+  margin: 0 auto;
+  animation: vertical 2s linear infinite;
+  transform-origin:center;
+  cursor: pointer;
+  }
+  @keyframes vertical {
+  0% {transform: translate(0px, 2px);}
+  5% {transform: translate(0px, -2px);}
+  10% {transform: translate(0px, 2px);}
+  15% {transform: translate(0px, -2px);}
+  20% {transform: translate(0px, 2px);}
+  25% {transform: translate(0px, -2px);}
+  30% {transform: translate(0px, 0px)}
+  }
+
+  input {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
