@@ -1,30 +1,30 @@
 
-    // liff.init({
-    //   liffId: '2003690789-4xoj9DNp'
-    // }).catch((err) => {
-    //   console.log(err);
-    // });
+    liff.init({
+      liffId: '2003690789-4xoj9DNp'
+    }).catch((err) => {
+      console.log(err);
+    });
 
-    // liff.ready.then(() => {
-    //   if (!liff.isLoggedIn()) {
-    //     liff.login();
-    //   }
-    //   const idToken = liff.getDecodedIDToken();
-    //   const userId = idToken.sub;
-    //   const userName = idToken.name;
-    //   const userPic = idToken.picture;
-    //   $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
-    //   $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
-    //   $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
+    liff.ready.then(() => {
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      }
+      const idToken = liff.getDecodedIDToken();
+      const userId = idToken.sub;
+      const userName = idToken.name;
+      const userPic = idToken.picture;
+      $('form').append(`<input type="hidden" name="userId" value="${userId}">`);
+      $('form').append(`<input type="hidden" name="userName" value="${userName}">`);
+      $('form').append(`<input type="hidden" name="userPic" value="${userPic}">`);
 
-    //   $('ul').append('<input type="submit"  class="hide">');
+      $('ul').append('<input type="submit"  class="hide">');
 
-    // $('ul').append('<li><input type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="Aに投票"></li>');
-    // $('ul').append('<li><input type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="Bに投票"></li>');
-
-     // });
     $('ul').append('<li><input type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="Aに投票"></li>');
     $('ul').append('<li><input type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="Bに投票"></li>');
+
+     });
+    // $('ul').append('<li><input type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="Aに投票"></li>');
+    // $('ul').append('<li><input type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="Bに投票"></li>');
 
     const send_id = "btn_id_ok";
     const cancel_id = "btn_id_cancel";
