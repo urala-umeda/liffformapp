@@ -19,12 +19,13 @@
 
       $('ul').append('<input type="submit"  class="hide">');
 
-    $('ul').append('<li><input type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="Aに投票"></li>');
-    $('ul').append('<li><input type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="Bに投票"></li>');
-
+      $('.btn-items').append('<li><button type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="">ラーメンに<br>投票する</button></li>');
+      $('.btn-items').append('<li><button type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="">からあげに<br>投票する</li>');
+  
      });
-    // $('ul').append('<li><input type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="Aに投票"></li>');
-    // $('ul').append('<li><input type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="Bに投票"></li>');
+
+    // $('.btn-items').append('<li><button type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="">ラーメンに<br>投票する</button></li>');
+    // $('.btn-items').append('<li><button type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="">からあげに<br>投票する</li>');
 
     const send_id = "btn_id_ok";
     const cancel_id = "btn_id_cancel";
