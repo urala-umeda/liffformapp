@@ -19,13 +19,13 @@ liff.ready.then(() => {
   $('ul').append('<input type="submit"  class="hide">');
 
 
-  $('.btn-items').append('<li class="inner"><label><div class="flexItem"><img class="flexItem_a btn_animate04" src="https://urala-umeda.github.io/liffformapp/right_01.png"></div><button type="submit" id="btn_id_left" class="btn-left btn_animate04" name="voteLeft" value="">ラーメンに<br>投票する</button></label></li>');
-  $('.btn-items').append('<li class="inner"><label><div class="flexItem"><img class="flexItem_b btn_animate04" src="https://urala-umeda.github.io/liffformapp/left_01.png"></div><button type="submit" id="btn_id_right" class="btn-right btn_animate04" name="voteRight" value="">からあげに<br>投票する</button><label></li>');
+  $('.btn-items').append('<li class="inner"><div class="flexItem"><img class="flexItem_a btn_animate04" src="https://urala-umeda.github.io/liffformapp/right_01.png"></div><button type="submit" id="btn_id_left" class="btn-left btn_animate04" name="voteLeft" value="">ラーメンに<br>投票する</button></label></li>');
+  $('.btn-items').append('<li class="inner"><div class="flexItem"><img class="flexItem_b btn_animate04" src="https://urala-umeda.github.io/liffformapp/left_01.png"></div><button type="submit" id="btn_id_right" class="btn-right btn_animate04" name="voteRight" value="">からあげに<br>投票する</button></label></li>');
 
 });
 
 // $('.btn-items').append('<li class="inner"><label><div class="flexItem"><img class="flexItem_a btn_animate04" src="https://urala-umeda.github.io/liffformapp/right_01.png"></div><button type="submit" id="btn_id_left" class="btn-left btn_animate04" name="voteLeft" value="">ラーメンに<br>投票する</button></label></li>');
-// $('.btn-items').append('<li class="inner"><label><div class="flexItem"><img class="flexItem_b btn_animate04" src="https://urala-umeda.github.io/liffformapp/left_01.png"></div><button type="submit" id="btn_id_right" class="btn-right btn_animate04" name="voteRight" value="">からあげに<br>投票する</button><label></li>');
+// $('.btn-items').append('<li class="inner"><label><div class="flexItem"><img class="flexItem_b btn_animate04" src="https://urala-umeda.github.io/liffformapp/left_01.png"></div><button type="submit" id="btn_id_right" class="btn-right btn_animate04" name="voteRight" value="">からあげに<br>投票する</button></label></li>');
 
 const send_id = "btn_id_left";
 const cancel_id = "btn_id_right";
