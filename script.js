@@ -19,8 +19,8 @@
 
       $('ul').append('<input type="submit"  class="hide">');
 
-      $('.btn-items').append('<li><button type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="">ラーメンに<br>投票する</button></li>');
-      $('.btn-items').append('<li><button type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="">からあげに<br>投票する</li>');
+      $('.btn-items').append('<li><div class="flexItem"><img class="flexItem_a" src="https://urala-umeda.github.io/liffformapp/left_01.png"></div><button type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="">ラーメンに<br>投票する</button></li>');
+      $('.btn-items').append('<li><div class="flexItem"><img class="flexItem_a" src="https://urala-umeda.github.io/liffformapp/right_01.png"></div><button type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="">からあげに<br>投票する</li>');
   
      });
 
