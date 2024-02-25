@@ -193,13 +193,13 @@ button {
   position: relative;
 }
 
-.flexItem_a {
+.flexItem_left {
   bottom: -30px;
   /* background: aqua; */
   /* margin-top: 60%; */
   /* object-position: 70%; */
 }
-.flexItem_b {
+.flexItem_right {
   bottom: -50px;
   /* background: orchid; */
   /* margin-top: 40%; */
