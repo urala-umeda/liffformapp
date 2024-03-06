@@ -24,8 +24,8 @@
   
      });
 
-    // $('.btn-items').append('<li><button type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="">ラーメンに<br>投票する</button></li>');
-    // $('.btn-items').append('<li><button type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="">からあげに<br>投票する</li>');
+    // $('.btn-items').append('<li><button type="submit" id="btn_id_ok" class="btn-left btn_animate04" name="voteLeft" value="">しょうゆに<br>投票する</button></li>');
+    // $('.btn-items').append('<li><button type="submit" id="btn_id_cancel" class="btn-right btn_animate04" name="voteRight" value="">ソースに<br>投票する</li>');
 
     const send_id = "btn_id_ok";
     const cancel_id = "btn_id_cancel";
