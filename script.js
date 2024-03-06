@@ -1,6 +1,6 @@
 
     liff.init({
-      liffId: '2003690789-4xoj9DNp'
+      liffId: '2003940861-Y5xdoklr'
     }).catch((err) => {
       console.log(err);
     });
