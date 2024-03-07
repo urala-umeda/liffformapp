@@ -37,6 +37,18 @@ body {
 .container {
   position: relative;
 }
+.headImg {
+  position: fixed;
+  /* display: flex; */
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background-image: url("https://urala-apps.github.io/liffformapp/whichi.png");
+  background-size:contain;
+  background-repeat: no-repeat;
+  /* background:no-repeat; */
+  z-index: 90;
+}
 /*メニューをページ下部に固定*/
 #area-items {
   position: fixed;
