@@ -186,13 +186,13 @@ button {
 }
 
 .flexItem_left {
-  bottom: 10px;
+  bottom: -15px;
   /* background: aqua; */
   /* margin-top: 60%; */
   /* object-position: 70%; */
 }
 .flexItem_right {
-  bottom: 10px;
+  bottom: -15px;
   /* background: orchid; */
   /* margin-top: 40%; */
   /* object-position: 30%; */
