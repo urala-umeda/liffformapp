@@ -91,55 +91,38 @@ li {
   padding: 20px;
 }
 
+/*左側ボタン*/
 .btn-left {
   display: block;
   border-radius: 10px;
-  /* 角丸       */
   font-size: 1.5em;
-  /* 文字サイズ */
   text-align: center;
-  /* 文字位置   */
   cursor: pointer;
-  /* カーソル   */
   padding: 12px 12px;
-  /* 余白       */
+  
   background: #F2A328;
-  /* 背景色     */
-  color: #F2A328;
-  /* 文字色     */
+  color: #ffffff;
   line-height: 1.2em;
-  /* 1行の高さ  */
   /* transition: .3s; */
-  /* なめらか変化 */
   /* box-shadow    : 6px 6px 3px #666666;  影の設定 */
   border: 2px solid #BD1E21;
-  /* 枠の指定 */
 }
 
-/*右側メニューをオレンジ色に*/
+/*右側ボタン*/
 .btn-right {
-  display: inline-block;
+  display: block;
   border-radius: 10px;
-  /* 角丸       */
   font-size: 1.5em;
-  /* 文字サイズ */
   text-align: center;
-  /* 文字位置   */
   cursor: pointer;
-  /* カーソル   */
   padding: 12px 12px;
-  /* 余白       */
+  
   background: #BD1E21;
-  /* 背景色     */
   color: #ffffff;
-  /* 文字色     */
   line-height: 1.2em;
-  /* 1行の高さ  */
   /* transition: .3s; */
-  /* なめらか変化 */
-
+  /* box-shadow    : 6px 6px 3px #666666;  影の設定 */
   border: 2px solid #F2A328;
-  /* 枠の指定 */
 }
 
 
