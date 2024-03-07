@@ -103,7 +103,7 @@ li {
   /* カーソル   */
   padding: 12px 12px;
   /* 余白       */
-  background: #38b435;
+  background: #F2A328;
   /* 背景色     */
   color: #F2A328;
   /* 文字色     */
@@ -112,11 +112,11 @@ li {
   /* transition: .3s; */
   /* なめらか変化 */
   /* box-shadow    : 6px 6px 3px #666666;  影の設定 */
-  border: 2px solid #38b435;
+  border: 2px solid #BD1E21;
   /* 枠の指定 */
 }
 
-/*左側メニューをオレンジ色に*/
+/*右側メニューをオレンジ色に*/
 .btn-right {
   display: inline-block;
   border-radius: 10px;
@@ -138,7 +138,7 @@ li {
   /* transition: .3s; */
   /* なめらか変化 */
 
-  border: 2px solid #f3a324;
+  border: 2px solid #F2A328;
   /* 枠の指定 */
 }
 
@@ -203,13 +203,13 @@ button {
 }
 
 .flexItem_left {
-  bottom: -10px;
+  bottom: 10px;
   /* background: aqua; */
   /* margin-top: 60%; */
   /* object-position: 70%; */
 }
 .flexItem_right {
-  bottom: -10px;
+  bottom: 10px;
   /* background: orchid; */
   /* margin-top: 40%; */
   /* object-position: 30%; */
